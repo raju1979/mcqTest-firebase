@@ -1,0 +1,120 @@
+page-register {
+    
+        #logoOuterDiv{
+            height: 250px;
+            width: 100%;
+            // background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center
+        }
+    
+        .logoImg{
+            max-width: 150px;
+        }
+    
+        #registrationContainerOuter{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    
+            background: #4b4b4b;
+        }
+    
+        #registrationContainer{
+            flex:1;
+        }
+    
+        .itemContainer{
+            width: 100%;
+            height: 50px;
+            border:1px solid #6f7170;
+            border-radius:5px;
+            margin: 0 auto;
+            margin-bottom:20px;
+            display: flex;
+            // justify-content: space-around;
+            align-items: center;
+            overflow: hidden; 
+        }
+    
+        .registericonContainer{
+            width: 50px;
+            height: 100%;
+            background: #6f7170;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        form{
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        ion-icon{
+            font-size: 30px;
+        }
+    
+        .registerInput{
+            // flex:1;
+            // height: 100%;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+    
+        input::-webkit-input-placeholder {
+            color: #6f7170 !important;
+        }
+    
+        .submitButton{
+    
+        }
+    
+        .passwordError{
+            padding: 10px 15px;
+            // background: #e57373;
+            color: #fff;
+            width: 80%;
+            border-radius:10px;
+            transition: 2s linear all;
+        }
+    
+        input{
+            transition: 1s linear all;    
+            width: 100%;
+            max-width: 340px;
+            height: 50px;
+            padding-left: 20px;
+            outline:none;
+            border: none;
+            background: transparent;
+            color:#fff;
+        }
+    
+        #submitButtonContainer{
+            width: 100%;
+        }
+    
+        .submitBtn{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 340px;
+            height: 50px;
+            font-size: 1.8rem;
+            background: color($colors,lowenergy);
+            color: #fff;
+        }
+    
+    }
+    

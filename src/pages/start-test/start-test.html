@@ -1,0 +1,79 @@
+<!--
+  Generated template for the StartTestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar color="headergrey">
+      <ion-title>{{categoryData?.category_name || Test}}</ion-title>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="showMarks()">
+            <ion-icon name="ios-checkmark-circle-outline" color="light"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+  
+    <div id="loadingContainer" *ngIf="httpRequestStart">
+      <!-- <ion-spinner color="light"></ion-spinner> -->
+      <img src="./assets/images/loading.svg"  />
+      <p>Please wait</p>
+      <img src="./assets/img/gesture.svg"  class="gestureImg"/>
+      
+    </div>
+  
+    <div id="pageOuterContainer" *ngIf="!httpRequestStart">
+  
+      <div id="sliderContainer">
+  
+        <ion-slides (ionSlideDidChange)="slideChanged()" *ngIf="mcqData?.data.length > 0">
+          <ion-slide *ngFor="let item of mcqData?.data, let i=index">
+            <div class="questionSlidesContainer">
+  
+              <div class="questionArea">
+                  {{item.question}}
+              </div>     
+              
+              <div class="optionsArea">
+                  <div class="optionContainer" *ngFor="let option of item.options, let j = index" [attr.optionid]="option.optionid" (click)="checkAnswer(i,j,option)" [style.background]="setOptionBg(item,option)">
+                      <div class="optionIndexArea">
+                        {{j+1}}
+                      </div>
+                      <div class="optionTextarea">
+                          {{option.optiontext}}
+                      </div>
+                      
+                    </div>
+              </div>            
+  
+            </div>
+          </ion-slide>
+        </ion-slides>
+  
+      </div>
+  
+      <div id="sliderMovingContainer">
+        <div id="prevContainer">
+            <button ion-button icon-only clear round  color="light" (click)="gotoPreviousSlide()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+        </div>
+        <div id="questionNumContainer">Question {{currentIndex + 1}} of {{mcqData?.data.length}}</div>
+        <div id="nextContainer">
+            <button ion-button icon-only clear round  color="light" (click)="goToNextSlide()">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+            </button>
+        </div>
+        
+      </div>
+  
+    </div>
+  
+  
+  </ion-content>

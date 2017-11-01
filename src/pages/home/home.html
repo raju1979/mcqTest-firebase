@@ -1,18 +1,39 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="headergrey">
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Category</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <!-- <div id="my_camera" #my_canvas></div> -->
+  <div id="outerContainer">
+    <div id="searchBoxContainer">
+      <input type="text" class="sarchInput">
+      <div class="searchIconContainer">
+          <ion-icon name="ios-search" class="forwardArrow"></ion-icon>
+      </div>
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <div id="categoriesListcontainer">
+
+      <div class="categoriesListContainer" *ngFor="let category of categoriesData, let i = index" (click)="selectTestCategory(category)">
+        <div class="categoryName">
+            {{category.category_name}}
+        </div>
+        <div class="arrowContainer">
+            <ion-icon name="ios-arrow-forward" class="forwardArrow"></ion-icon>
+        </div>
+      </div>
+
+        
+
+    </div>
+
+  </div>
+
+
 </ion-content>

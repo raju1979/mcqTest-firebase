@@ -1,0 +1,28 @@
+
+<ion-content>
+
+  <div id="outerContainer">
+
+    <div id="logoOuterDiv">
+      <img [src]="getLogoImg()" alt="" class="logoImg" />
+    </div>
+
+    <div id="loginOuterDiv">
+
+        <form #form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+          <input  formControlName="email" type="email" placeholder="email" value='dhrajesh1@gmail.com' />
+          <input formControlName="password" type="password" placeholder="Password" />
+          <button class="loginBtn" type="submit" [disabled]="!loginForm.valid">LOGIN</button>
+        </form>
+
+        <div id="bottomTextContainer">
+            <div class="forgetPassText" click="resendPassword()">Forget Password?</div>
+            <div class="registerBtn" (click)="gotoRegistration()">Don't have and account? <span>Register</span></div>
+        </div>
+        
+
+    </div>
+
+  </div>
+
+</ion-content>
